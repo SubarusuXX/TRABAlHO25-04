@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTADOR COLORIDO</title>
+    <style>
+        body {
+            background-color: rgb(25, 53, 175);
+            height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family:'Times New Roman', Times, serif;
+        }
+        .tela {
+            text-align: center;
+            margin-bottom: 1px;
+        }
+        .botao {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        #Valor {
+            font-size: 3em;
+            margin: 50px;
+            padding: 5px;
+            border-radius: 50px;
+            background-color: white; 
+        }
+        .positivo {
+            color: #2ecc71;
+            background-color: white;
+        }
+        .negativo {
+            color: #e74c3c; 
+            background-color: white;
+        }
+        .neutro {
+            color: gray;
+            background-color: white;
+        }
+        button {
+            padding: 10px 30px;
+            font-size: 70px;
+            border: none;
+            border-radius: 15px;
+            background-color: #000000;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        button:hover {
+            background-color: #7100db;
+            transform: scale(2.50);
+        }
+    </style>
+</head>
+<body>
+    <div class="tela">
+        <h1>CONTADOR COLORIDO</h1>
+        <h1 id="Valor" class="neutro">0</h1>
+    </div>
+
+    <div class="botao">
+        <button id="diminuir" onclick="diminuir()">-</button>
+        <button id="resetar" onclick="resetar()">0</button>
+        <button id="aumentar" onclick="aumentar()">+</button>
+    </div>
+
+    <script>
+        let contador = 0;
+        
+        const valorElement = document.getElementById("Valor");
+
+        function updateDisplay() {
+            valorElement.textContent = contador;
+            
+            valorElement.classList.remove("positivo", "negativo", "neutro");
+            
+            if (contador > 0) {
+                valorElement.classList.add("positivo");
+            } else if (contador < 0) {
+                valorElement.classList.add("negativo");
+            } else {
+                valorElement.classList.add("neutro");
+            }
+        }
+
+        function aumentar() {
+                contador++;
+                updateDisplay();
+        }
+
+        function diminuir() {
+            contador--;
+            updateDisplay();
+        }
+
+        function resetar() {
+            contador = 0;
+            updateDisplay();
+        }
+
+        updateDisplay();
+    </script>
+</body>
+</html>
