@@ -8,23 +8,24 @@
     <style>
         body{
             background-color: cadetblue;
+            height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         .testo{
-            justify-content: center;
-            align-items: center;
-            top: 30%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            position: absolute;
-            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
         }
         .botao{
-            justify-content: center;
-            align-items: center;
-            top: 30%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            position: absolute;
+           display: flex;
+           gap: 10px;
+        }
+        #Valor{
+        font-size: 3em;
+        padding: 5px;
+        border-radius: 20px;
+        background-color: white;
         }
        
        
@@ -38,9 +39,9 @@
 </div>
 
     <div class="botao" style="align-items: center;">
-    <button id="aumentar"onclick="aumentar()">Aumentar</button>
-    <button id="diminuir"onclick="diminuir()">Diminuir</button>
-    <button id="resetar"onclick="resetar()">Resetar</button>
+    <button id="aumentar"onclick="aumentar()">+</button>
+    <button id="diminuir"onclick="diminuir()">-</button>
+    <button id="resetar"onclick="resetar()">0</button>
 </div>
    <script>
            let contador = 0;
