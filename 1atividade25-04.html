@@ -7,25 +7,41 @@
 
     <style>
         body{
-            background-color: cadetblue;
+            background-color: rgb(0, 0, 0);
             flex-direction: column;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .testo{
-            justify-content: center;
-            align-items: center;
-            top: 30%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            position: absolute;
-            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #Valor{
+            font-size: 3em;
+            margin: 50px;
+            padding: 5px;
+            border-radius: 15px;
+            background-color: blueviolet;
         }
         .botao{
-            justify-content: center;
-            align-items: center;
-            top: 30%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            position: absolute;
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        button{
+            padding: 10px 30px;
+            font-size: 50px;
+            border: none;
+            border-radius: 15px;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        button:hover{
+            
+            transform: scale(1.50);
         }
        
        
@@ -39,18 +55,24 @@
 </div>
 
     <div class="botao" style="align-items: center;">
-    <button id="aumentar"onclick="aumentar()">Aumentar</button>
+    <button id="diminuir"onclick="diminuir()">-</button>
+    <button id="aumentar"onclick="aumentar()">+</button>
+    
     
 </div>
    <script>
            let contador = 0;
            
             function aumentar(){
-                contador++
+                contador ++;
                 updateDisplay(contador);
                
             };
-        
+            function diminuir(){
+                contador --;
+                updateDisplay(contador);
+               
+            };
             function updateDisplay(valor){
                 document.getElementById("Valor").innerHTML= valor;
             }
